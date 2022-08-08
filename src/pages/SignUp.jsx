@@ -7,6 +7,7 @@ import { db } from '../firsebase.config'
 import {ReactComponent as ArrowRightIcon} from '../assets/svg/keyboardArrowRightIcon.svg'
 import visabilityIcon from '../assets/svg/visibilityIcon.svg'
 import { async } from '@firebase/util';
+import { toast } from 'react-toastify';
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false)
@@ -46,6 +47,7 @@ function SignUp() {
       navigate('/')
     } catch (error) {
       console.log(error)
+      toast.error('Sign Up Failed')
     }
   }
 
