@@ -6,7 +6,7 @@ import {setDoc, doc, serverTimestamp} from 'firebase/firestore'
 import { db } from '../firsebase.config'
 import {ReactComponent as ArrowRightIcon} from '../assets/svg/keyboardArrowRightIcon.svg'
 import visabilityIcon from '../assets/svg/visibilityIcon.svg'
-import { async } from '@firebase/util';
+import OAuth from '../components/OAuth';
 import { toast } from 'react-toastify';
 
 function SignUp() {
@@ -100,7 +100,7 @@ function SignUp() {
             </button>
           </div>
         </form>
-        {/* OAuth */}
+        <OAuth/>
         <Link to='/sign-in' className='registerLink'>
           Sign In
         </Link>
