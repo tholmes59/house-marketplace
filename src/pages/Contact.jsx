@@ -1,18 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Navigate, useParams, useSearchParams, useNavigate } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firsebase.config";
 import { toast } from "react-toastify";
-import { async } from "@firebase/util";
 
 function Contact() {
   const [message, setMessage] = useState("");
   const [landLord, setLandLord] = useState(null);
+  // eslint-disable-next-line
   const [searchParams, setSearchParams] = useSearchParams();
 
   const params = useParams();
-  const navigate = useNavigate()
 
   useEffect(() => {
     const getLandlord = async () => {
@@ -27,7 +26,7 @@ function Contact() {
       }
     };
     getLandlord();
-  }, [params.landlordId]);
+  }, [params]);
 
   const onChange = (e) => {
     setMessage(e.target.value);
